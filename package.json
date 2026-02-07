@@ -1,0 +1,14 @@
+{
+  "name": "shooter-game",
+  "version": "1.0.0",
+  "description": "Jogo de tiro 2D com TypeScript",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "npx http-server . -p 3000"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "http-server": "^14.1.1"
+  }
+}

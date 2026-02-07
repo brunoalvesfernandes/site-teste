@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Shooter - Jogo de Tiro</title>
+  <link rel="stylesheet" href="src/styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="game-container">
+    <header class="game-header">
+      <h1><i class="fas fa-rocket"></i> SPACE SHOOTER</h1>
+      <div class="game-info">
+        <div class="score-display">
+          <i class="fas fa-star"></i>
+          <span id="score">0</span>
+        </div>
+        <div class="lives-display">
+          <i class="fas fa-heart"></i>
+          <span id="lives">3</span>
+        </div>
+        <div class="level-display">
+          <i class="fas fa-chart-line"></i>
+          <span id="level">1</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-main">
+      <div class="game-area">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <div class="controls-panel">
+          <div class="control-group">
+            <h3><i class="fas fa-gamepad"></i> Controles</h3>
+            <div class="control-item">
+              <span class="key">W / ↑</span>
+              <span>Mover para cima</span>
+            </div>
+            <div class="control-item">
+              <span class="key">S / ↓</span>
+              <span>Mover para baixo</span>
+            </div>
+            <div class="control-item">
+              <span class="key">A / ←</span>
+              <span>Mover para esquerda</span>
+            </div>
+            <div class="control-item">
+              <span class="key">D / →</span>
+              <span>Mover para direita</span>
+            </div>
+            <div class="control-item">
+              <span class="key">ESPAÇO</span>
+              <span>Atirar</span>
+            </div>
+          </div>
+          
+          <div class="weapon-selector">
+            <h3><i class="fas fa-gun"></i> Armas</h3>
+            <div class="weapon-options">
+              <button class="weapon-btn active" data-weapon="basic">
+                <i class="fas fa-bolt"></i> Básica
+              </button>
+              <button class="weapon-btn" data-weapon="spread">
+                <i class="fas fa-spray-can"></i> Espalhada
+              </button>
+              <button class="weapon-btn" data-weapon="laser">
+                <i class="fas fa-bolt-lightning"></i> Laser
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-controls">
+        <button id="startBtn" class="btn btn-primary">
+          <i class="fas fa-play"></i> Iniciar Jogo
+        </button>
+        <button id="pauseBtn" class="btn btn-secondary">
+          <i class="fas fa-pause"></i> Pausar
+        </button>
+        <button id="restartBtn" class="btn btn-danger">
+          <i class="fas fa-redo"></i> Reiniciar
+        </button>
+        <button id="fullscreenBtn" class="btn btn-info">
+          <i class="fas fa-expand"></i> Tela Cheia
+        </button>
+      </div>
+    </main>
+
+    <div class="game-stats">
+      <div class="stat-card">
+        <h3><i class="fas fa-trophy"></i> Recorde</h3>
+        <p id="highScore">0</p>
+      </div>
+      <div class="stat-card">
+        <h3><i class="fas fa-clock"></i> Tempo</h3>
+        <p id="gameTime">00:00</p>
+      </div>
+      <div class="stat-card">
+        <h3><i class="fas fa-skull-crossbones"></i> Inimigos</h3>
+        <p id="enemiesKilled">0</p>
+      </div>
+      <div class="stat-card">
+        <h3><i class="fas fa-bullseye"></i> Precisão</h3>
+        <p id="accuracy">0%</p>
+      </div>
+    </div>
+
+    <div class="game-messages" id="gameMessages">
+      <div class="message" id="welcomeMessage">
+        <h2><i class="fas fa-space-shuttle"></i> Bem-vindo ao Space Shooter!</h2>
+        <p>Use as teclas WASD ou setas para mover sua nave. Pressione ESPAÇO para atirar.</p>
+        <p>Destrua os inimigos para ganhar pontos. Evite ser atingido!</p>
+        <button class="btn btn-primary" id="closeWelcome">Começar Jogo</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="src/main.ts"></script>
+</body>
+</html>
